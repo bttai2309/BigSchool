@@ -43,7 +43,14 @@ textarea {
         position: relative;
         margin-bottom: 30px;
     }
-
+        .course > li .action {
+            position: absolute;
+            left: 100px;
+            top: 40px;
+        }
+        .course > li:hover .action {
+            display: block;
+        }
         .course > li .date {
             text-align: center;
             background-color: #009ad0;

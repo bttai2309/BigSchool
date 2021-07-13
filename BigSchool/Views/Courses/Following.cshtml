@@ -1,0 +1,22 @@
+﻿@model IEnumerable<BigSchool.Models.ApplicationUser>
+@{
+    ViewBag.Title = "Following";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Danh sách giảng viên đã theo dõi</h3>
+
+<div class="following">
+    @foreach(var user in Model)
+            {
+                <div class="details d-flex">
+                    <ol class="lecturer">
+                        <p>Tên giảng viên: @user.Name</p>
+                        <p>Địa chỉ email: @user.Email</p>
+                        <p>Số điện thoại: @user.PhoneNumber</p>
+                        <hr />
+                    </ol>
+                    
+                </div>
+            }
+</div>

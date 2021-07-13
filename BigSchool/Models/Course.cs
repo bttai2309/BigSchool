@@ -1,6 +1,7 @@
 ﻿using Microsoft.Build.Framework.XamlTypes;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
@@ -10,12 +11,18 @@ namespace BigSchool.Models
     public class Course
     {
         public int Id { get; set; }
+        [DisplayName("Trạng thái khóa học")]
+        public bool IsCanceled { get; set; }
+        
         public ApplicationUser Lecturer { get; set; }
+        
         [Required]
         public string LecturerId { get; set; }
         [Required]
         [StringLength(255)]
+        [DisplayName("Trường")]
         public string Place { get; set; }
+        [DisplayName("Thời gian")]
         public DateTime DateTime { get; set; }
         public Category Category { get; set; }
         [Required]

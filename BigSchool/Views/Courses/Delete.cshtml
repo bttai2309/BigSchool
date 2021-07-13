@@ -1,0 +1,72 @@
+﻿@model BigSchool.Models.Course
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xóa khóa học</h2>
+
+<h3>Bạn có muốn xóa khóa học này?</h3>
+<div>
+    <h4>Course</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lecturer.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lecturer.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsCanceled)
+        </dt>
+
+        <td>
+            @if (Model.IsCanceled == true)
+            {
+                <span class="badge light badge-success">Đã hủy</span>
+            }
+            else
+            {
+                <span class="badge light badge-warning">Chưa hủy</span>
+            }
+        </td>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Place)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Place)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateTime)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa khóa học" class="btn btn-default" /> |
+            @Html.ActionLink("Quay lại danh sách", "Index")
+        </div>
+    }
+</div>
